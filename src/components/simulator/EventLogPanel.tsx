@@ -31,7 +31,7 @@ export function EventLogPanel({
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-[11px] text-slate-300">
                 {index + 1}
               </span>
-              <span className="min-w-0 truncate break-all overflow-hidden">
+              <span className="min-w-0 flex-1 truncate overflow-hidden text-ellipsis">
                 {eventName}
               </span>
             </li>
@@ -41,11 +41,11 @@ export function EventLogPanel({
 
       <div className="mt-5 min-w-0 rounded-[1.25rem] border border-white/10 bg-[#07111f] p-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
               Selected event payload
             </p>
-            <p className="mt-2 break-words text-sm font-semibold text-white">
+            <p className="mt-2 truncate overflow-hidden text-ellipsis text-sm font-semibold text-white">
               {selectedEvent.stripeEvent}
             </p>
           </div>
