@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Plaze | SaaS Landing Page",
-  description: "Plaze helps teams plan, align, and execute work with more clarity.",
+  title: "Plaze | Stripe Billing Simulator",
+  description:
+    "Plaze visualizes Stripe subscription lifecycle events, webhook ordering, invoices, prorations, and retries.",
 };
 
 export default function RootLayout({
