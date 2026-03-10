@@ -49,7 +49,7 @@ export function SimulatorShell() {
                 one developer-facing surface.
               </p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-3 lg:w-[360px]">
+            <div className="grid gap-3 sm:grid-cols-3 lg:w-[420px]">
               <Stat label="Scenarios" value={String(simulationScenarios.length)} />
               <Stat label="Current flow" value={String(selectedScenario.timeline.length)} />
               <Stat label="Webhooks" value={String(selectedScenario.eventLog.length)} />
@@ -77,7 +77,7 @@ export function SimulatorShell() {
               </p>
             </div>
 
-            <div className="grid gap-6 2xl:grid-cols-[minmax(0,1fr)_380px]">
+            <div className="grid gap-6 xl:grid-cols-1 2xl:grid-cols-[minmax(0,1fr)_380px]">
               <Timeline
                 events={selectedScenario.timeline}
                 selectedEventId={selectedEvent.id}
@@ -104,9 +104,11 @@ type StatProps = {
 
 function Stat({ label, value }: StatProps) {
   return (
-    <div className="rounded-[1.2rem] border border-slate-200 bg-white/90 p-4">
-      <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{label}</p>
-      <p className="mt-2 text-2xl font-semibold tracking-tight text-slate-950">
+    <div className="flex min-w-[120px] flex-col items-center justify-center rounded-[1.2rem] border border-slate-200 bg-white/90 p-4 text-center">
+      <p className="max-w-full break-words text-xs uppercase tracking-[0.18em] text-slate-500">
+        {label}
+      </p>
+      <p className="mt-2 max-w-full break-words text-2xl font-semibold tracking-tight text-slate-950">
         {value}
       </p>
     </div>

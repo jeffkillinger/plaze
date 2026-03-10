@@ -12,9 +12,9 @@ export function ScenarioSelector({
   onSelect,
 }: ScenarioSelectorProps) {
   return (
-    <section className="rounded-[1.75rem] border border-slate-200 bg-white/90 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
-      <div className="flex items-start justify-between gap-4">
-        <div>
+    <section className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white/90 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700">
             Scenario Selector
           </p>
@@ -22,7 +22,7 @@ export function ScenarioSelector({
             Pick a Stripe billing path
           </h2>
         </div>
-        <div className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600">
+        <div className="self-start rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-600">
           {scenarios.length} presets
         </div>
       </div>
@@ -41,16 +41,16 @@ export function ScenarioSelector({
                   : "border-slate-200 bg-slate-50/70 hover:border-slate-300 hover:bg-white"
               }`}
             >
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm font-semibold text-slate-950">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0">
+                  <p className="break-words text-sm font-semibold text-slate-950">
                     {scenario.title}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="mt-2 break-words text-sm leading-6 text-slate-600">
                     {scenario.summary}
                   </p>
                 </div>
-                <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
+                <span className="self-start rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
                   {scenario.category}
                 </span>
               </div>

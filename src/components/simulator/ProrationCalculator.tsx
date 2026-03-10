@@ -38,9 +38,9 @@ export function ProrationCalculator({
   const netAmount = proration.prorationCharge - proration.prorationCredit;
 
   return (
-    <section className="rounded-[1.75rem] border border-amber-200 bg-[linear-gradient(180deg,rgba(255,251,235,0.9),rgba(255,255,255,0.95))] p-5 shadow-[0_18px_40px_rgba(245,158,11,0.08)]">
-      <div className="flex items-start justify-between gap-4">
-        <div>
+    <section className="overflow-hidden rounded-[1.75rem] border border-amber-200 bg-[linear-gradient(180deg,rgba(255,251,235,0.9),rgba(255,255,255,0.95))] p-5 shadow-[0_18px_40px_rgba(245,158,11,0.08)]">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
             Proration Preview
           </p>
@@ -48,7 +48,7 @@ export function ProrationCalculator({
             Stripe-style proration breakdown
           </h2>
         </div>
-        <span className="rounded-full border border-amber-300 bg-white/80 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-amber-800">
+        <span className="self-start rounded-full border border-amber-300 bg-white/80 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-amber-800">
           Mid-cycle change
         </span>
       </div>
@@ -62,12 +62,12 @@ export function ProrationCalculator({
       </div>
 
       <div className="mt-5 rounded-[1.25rem] border border-amber-200 bg-white/80 p-4">
-        <p className="font-mono text-xs text-slate-500">
+        <p className="overflow-x-auto font-mono text-xs text-slate-500">
           unused_old_plan = ({formatCurrency(proration.originalPlanPrice)} /{" "}
           {proration.cycleDays}) * {proration.daysRemaining} ={" "}
           {formatCurrency(Math.round(proratedOldPlan))}
         </p>
-        <p className="mt-2 font-mono text-xs text-slate-500">
+        <p className="mt-2 overflow-x-auto font-mono text-xs text-slate-500">
           remaining_new_plan = ({formatCurrency(proration.upgradePlanPrice)} /{" "}
           {proration.cycleDays}) * {proration.daysRemaining} ={" "}
           {formatCurrency(Math.round(proratedNewPlan))}
