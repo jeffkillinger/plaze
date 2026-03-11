@@ -88,7 +88,7 @@ export function SimulatorShell() {
               </div>
             </div>
 
-            <ProrationCalculator proration={selectedScenario.proration} />
+            <ProrationCalculator />
           </div>
         </section>
       </Container>
